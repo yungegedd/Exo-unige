@@ -60,3 +60,14 @@ str.lower(s)
 print(str.lower(s))   
 s.lower()
 print(s.lower())
+#liste tuple ensemble dictionnaire
+a=['un',2,3,'quatre',5,6,7,'sept']
+print(a)
+print(a[0])
+print(a[1:])
+print(a[2:-1])
+
+a='toto'
+b=a
+a+= ' et titi'
+print(a)
