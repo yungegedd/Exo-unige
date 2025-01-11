@@ -54,4 +54,9 @@ for n in range(2,25):
     while m<n and n%m>0 :
         m+=1
     if m==n:
-        print(n)    
+        print(n)   
+s= 'Une Grande Maison'
+str.lower(s)    
+print(str.lower(s))   
+s.lower()
+print(s.lower())
