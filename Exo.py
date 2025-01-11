@@ -71,3 +71,65 @@ a='toto'
 b=a
 a+= ' et titi'
 print(a)
+print(b)
+
+a=[1,2,3]
+b=a
+a+=[4,5,6]
+print(a)
+print(b)
+
+a+='blah'
+print(a)
+
+a=['truc']
+b=a
+c=a.copy()
+a+=['machin']
+print(a)
+print(b)
+print(c)
+
+l=[[1,2],[3]]
+print(l)
+m=l.copy()
+print(m)
+l[0]='truc'
+print(l)
+print(m)
+l[1]+=['un']
+print(l)
+print(m)
+
+l=[0,1,2,3,4,5,6,7,8,9]
+print(len(l))
+l.append(10)
+print(l)
+l.insert(4,40)
+print(l)
+l.remove(40)
+print(l)
+l.reverse()
+print(l)
+l[5]=111
+print(l)
+l[1:4]=['a','b']
+print(l)
+
+a=[0,1,2,3,4,5]
+print(a)
+del a[2]
+print(a)
+del a[1:3]
+print(a)
+
+for m in ['premier','deuxieme','troisieme']:
+    print(m)
+a=[1,2,3,4,5]
+2 in a    
+print(2 in a)
+1 in a
+print(1 in a)
+10 in a
+print(10 in a)
+p =[]
