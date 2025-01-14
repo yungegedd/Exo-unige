@@ -29,6 +29,10 @@ def exercice1():
 def exercice2():
     nombres = list(range(10))
     # ******************** Votre code ci-dessous ********************
+    carres=[]
+    for x in nombres:
+        carres.append(x**2)
+    print("\n".join(f"{x}:{s}" for x,s in zip(nombres,carres)))
     
     # ******************** Votre code ci-dessous ********************
 
@@ -41,6 +45,15 @@ def exercice2():
 def exercice3():
     nombres = [0, 23, 5, 61, 86, 35, 51, 79, 2, 85, 15, 41, 19, 0, 3]
     # ******************** Votre code ci-dessous ********************
+    pairs=[]
+    impairs=[]
+    for x in nombres:
+        if x%2==0:
+            pairs.append(x)
+        else:
+            impairs.append(x)   
+    print(f"pairs :{pairs}")
+    print(f"impairs :{impairs}")             
     
     # ******************** Votre code ci-dessus *********************
 
@@ -60,6 +73,7 @@ def exercice4():
 
 def fibonacci(n):
     # ******************** Votre code ci-dessous ********************
+    return fibonacci_it(n)
     return 0
     # ******************** Votre code ci-dessus *********************
 

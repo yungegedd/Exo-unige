@@ -219,4 +219,19 @@ for k,v in d.items():
     print(k,v)
 prix={'pomme':1.5,'poire':2.0,'banane':1.0}
 print(list(prix.keys()))
-print(list(prix.values()))    
+print(list(prix.values())) 
+#fonctions
+
+def le_plus_grand(a,b):
+    if a>b:
+        return a
+    else:
+        return b
+print(le_plus_grand(3,5))  
+print(le_plus_grand(5,3))   
+print(le_plus_grand('toto','titi')) 
+
+def bonjour(nom):
+    print('Bonjour',nom)
+bonjour('toto')
+bonjour(456)    
