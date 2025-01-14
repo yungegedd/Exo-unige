@@ -13,6 +13,10 @@ def exercice1():
     Nom=(input("Entrez votre nom: "))
     birthdate=(str(input("Entrez votre date de naissance: ")))
     print("je m'appelle",Nom,"et je suis né le",birthdate)
+    #ou
+    Nom=(input("Entrez votre nom: "))
+    birthdate=(str(input("Entrez votre date de naissance: ")))
+    print(f"je m'appelle {Nom} et je suis né le {birthdate}")
     pass
     # ******************** Votre code ci-dessus *********************
 
