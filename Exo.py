@@ -133,3 +133,90 @@ print(1 in a)
 10 in a
 print(10 in a)
 p =[]
+p.append('paris')
+print(p)
+p.append('london')
+print(p)
+p.append("tokyo")
+print(p)
+p.pop()
+print(p)
+p.append('berlin')
+print(p)
+print(p.pop())
+print(p)
+
+#tuples
+a=("un",2,3.0)
+print(a)
+print(len(a))
+
+b="un",2,3.0
+print(b)
+
+s=150,
+print(s)
+print(a[0])
+print(b[1:3])
+l=[1,2,3]
+l[2]=4
+print(l)
+t='un',2,3
+print(t)
+#t[2]=4
+#t[2]=4(impossible)
+
+a,b=(1,2)
+print(a)
+print(b)
+x=['bob',35,'berlin']
+name,age,city=x
+print(name)
+print(age)
+print(city)
+
+#a,b,c=(1,2,3,4,5)
+#print(a)
+
+for a,b in [(1,-1),[3,4],["pim","pam"]]:
+    print(a+b)
+a='123' 
+print(list(a))  
+print(tuple(a)) 
+l=tuple(a)
+print(l)
+l=['un','deux','trois']
+print(tuple(l))
+
+#ensembles
+print({1,2,3,5,3,2})
+print(set('abracadabra'))
+a=set([12,56,78,12,34,56,12,17])
+print(a)
+print(35 in a)
+
+f={'geneve','zurich','berne','neuchatel','lausanne'}
+g={'berne','zurich','berne','bale','fribourg'}
+print(f-g)
+print(f|g)
+print(f&g)
+print('berne' in f)
+
+#dictionnaires
+prix={'pomme':1.5,'poire':2.0,'banane':1.0}
+print(prix['pomme'])
+prix['pomme']=1.6
+print(prix['pomme'])
+prix['orange']=1.8
+print(prix)
+del prix['banane']
+print(prix)
+prix['orange']=1.9
+print(prix)
+d=dict([(1,'un'),(2,'deux'),(3,'trois')])
+print(d)
+for k,v in d.items():
+    print(k,v)
+prix={'pomme':1.5,'poire':2.0,'banane':1.0}
+print(list(prix.keys()))
+print(list(prix.values()))    
