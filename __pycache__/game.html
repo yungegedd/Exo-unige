@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Aventure Magique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0e68c;
+            color: #333;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #ff6347;
+        }
+        .scene {
+            margin-bottom: 30px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #87cefa;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .options button:hover {
+            background-color: #00bfff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Aventure Magique</h1>
+    <div id="game"></div>
+
+    <script>
+        const scenes = {
+            debut: {
+                text: "Tu es dans une clairière ensoleillée. Devant toi, il y a un chemin scintillant.",
+                options: [
+                    {
+                        text: "Suivre le chemin",
+                        nextScene: "chemin"
+                    },
+                    {
+                        text: "Entrer dans la forêt",
+                        nextScene: "foret"
+                    },
+                    {
+                        text: "Regarder le ciel",
+                        nextScene: "ciel"
+                    }
+                ]
+            },
+            chemin: {
+                text: "Le chemin te mène à un pont arc-en-ciel.",
+                options: [
+                    {
+                        text: "Traverser le pont",
+                        nextScene: "pont"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    },
+                    {
+                        text: "S'assoir et se reposer",
+                        nextScene: "repos"
+                    }
+                ]
+            },
+            foret: {
+                text: "Dans la forêt, un lapin parle t'invite à le suivre.",
+                options: [
+                    {
+                        text: "Suivre le lapin",
+                        nextScene: "lapin"
+                    },
+                    {
+                        text: "Cueillir des fleurs",
+                        nextScene: "fleurs"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    }
+                ]
+            },
+            ciel: {
+                text: "Dans le ciel, un oiseau chante une chanson magique.",
+                options: [
+                    {
+                        text: "Écouter la chanson",
+                        nextScene: "chanson"
+                    },
+                    {
+                        text: "Saluer l'oiseau",
+                        nextScene: "oiseau"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    }
+                ]
+            },
+            pont: {
+                text: "De l'autre côté du pont, un château scintille.",
+                options: [
+                    {
+                        text: "Visiter le château",
+                        nextScene: "chateau"
+                    },
+                    {
+                        text: "Danser sur le pont",
+                        nextScene: "danser"
+                    },
+                    {
+                        text: "Retourner en arrière",
+                        nextScene: "chemin"
+                    }
+                ]
+            },
+            repos: {
+                text: "Tu te reposes et une fée apparaît.",
+                options: [
+                    {
+                        text: "Parler à la fée",
+                        nextScene: "fee"
+                    },
+                    {
+                        text: "Faire un souhait",
+                        nextScene: "souhait"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    }
+                ]
+            },
+            lapin: {
+                text: "Le lapin te montre un trésor brillant.",
+                options: [
+                    {
+                        text: "Ouvrir le trésor",
+                        nextScene: "tresor"
+                    },
+                    {
+                        text: "Remercier le lapin",
+                        nextScene: "foret"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    }
+                ]
+            },
+            fleurs: {
+                text: "Les fleurs se transforment en papillons colorés.",
+                options: [
+                    {
+                        text: "Suivre les papillons",
+                        nextScene: "papillons"
+                    },
+                    {
+                        text: "Danser avec les papillons",
+                        nextScene: "dansePapillons"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    }
+                ]
+            },
+            chanson: {
+                text: "La chanson te donne des ailes magiques.",
+                options: [
+                    {
+                        text: "Voler dans le ciel",
+                        nextScene: "voler"
+                    },
+                    {
+                        text: "Partager la chanson",
+                        nextScene: "partager"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    }
+                ]
+            },
+            oiseau: {
+                text: "L'oiseau te donne une plume dorée.",
+                options: [
+                    {
+                        text: "Garder la plume",
+                        nextScene: "plume"
+                    },
+                    {
+                        text: "Chatouiller l'oiseau",
+                        nextScene: "chatouiller"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    }
+                ]
+            },
+            // Continuer à ajouter des scènes ici
+            chateau: {
+                text: "Dans le château, une princesse t'offre une couronne.",
+                options: [
+                    {
+                        text: "Porter la couronne",
+                        nextScene: "couronne"
+                    },
+                    {
+                        text: "Offrir la couronne",
+                        nextScene: "offrirCouronne"
+                    },
+                    {
+                        text: "Retourner au pont",
+                        nextScene: "pont"
+                    }
+                ]
+            },
+            fee: {
+                text: "La fée exauce ton vœu et des étoiles brillent autour de toi.",
+                options: [
+                    {
+                        text: "Toucher une étoile",
+                        nextScene: "etoile"
+                    },
+                    {
+                        text: "Faire un nouveau vœu",
+                        nextScene: "nouveauSouhait"
+                    },
+                    {
+                        text: "Retourner à la clairière",
+                        nextScene: "debut"
+                    }
+                ]
+            },
+            // Fin du jeu ou scènes supplémentaires
+            tresor: {
+                text: "Le trésor contient des jouets magiques !",
+                options: [
+                    {
+                        text: "Jouer avec les jouets",
+                        nextScene: "jouer"
+                    },
+                    {
+                        text: "Partager les jouets",
+                        nextScene: "partagerJouets"
+                    },
+                    {
+                        text: "Remercier le lapin",
+                        nextScene: "foret"
+                    }
+                ]
+            }
+        };
+
+        function startGame() {
+            showScene('debut');
+        }
+
+        function showScene(sceneKey) {
+            const scene = scenes[sceneKey];
+            const gameDiv = document.getElementById('game');
+            gameDiv.innerHTML = '';
+
+            const sceneDiv = document.createElement('div');
+            sceneDiv.classList.add('scene');
+
+            const sceneText = document.createElement('p');
+            sceneText.textContent = scene.text;
+            sceneDiv.appendChild(sceneText);
+
+            const optionsDiv = document.createElement('div');
+            optionsDiv.classList.add('options');
+
+            scene.options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option.text;
+                button.addEventListener('click', () => {
+                    showScene(option.nextScene);
+                });
+                optionsDiv.appendChild(button);
+            });
+
+            gameDiv.appendChild(sceneDiv);
+            gameDiv.appendChild(optionsDiv);
+        }
+
+        startGame();
+    </script>
+</body>
+</html>
