@@ -150,5 +150,6 @@ for n in range (100):
     while m<n and n%m>0:
         m+=1
     if m==n:print (n)    
+    
 
 
