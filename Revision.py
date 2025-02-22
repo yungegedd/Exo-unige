@@ -128,20 +128,27 @@
 
 # version pour estimer pi
 
-N = 0
-M = 0
-delta = 5e-4
+# N = 0
+# M = 0
+# delta = 5e-4
 
-x = 0
-while x < 1:
-    y = 0
-    while y <= 1:
-        N += 1
-        if x**2 + y**2 <= 1:
-            M += 1
-            y += delta
+# x = 0
+# while x < 1:
+#     y = 0
+#     while y <= 1:
+#         N += 1
+#         if x**2 + y**2 <= 1:
+#             M += 1
+#             y += delta
 
-    x += delta
+#     x += delta
 
-print(f"pi~{4*M/N}")            
+# print(f"pi~{4*M/N}")            
+
+for n in range (100):
+    m=2
+    while m<n and n%m>0:
+        m+=1
+    if m==n:print (n)    
+
 
