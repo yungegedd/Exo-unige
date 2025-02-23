@@ -2,6 +2,7 @@ import random
 
 from utils import exercice , formatter_sudoku ,generer_personnes,generer_resultats, obtenir_sudoku_valide
 
+@exercice
 def ExerxciceIA():
     # Exercice 1 : Indentation et Boucles
     # Écrire un programme qui affiche les nombres de 1 à 10.
@@ -48,16 +49,89 @@ def ExerxciceIA():
 # d'une personne en entrée et affiche 
 # un message de bienvenue formaté avec les f-strings.
 
-Nom = input("Entrez votre nom : ")
-Prenom = input("Entrez votre prénom : ")
-Date de naissance = input("Entrez votre date de naissance : ")
-print(f"Bienvenue {Prenom} {Nom} !")
+@exercice
+def exercice1():
+    Nom = input("Entrez votre nom : ")
+    Prenom = input("Entrez votre prénom : ")
+    Date_de_naissance = input("Entrez votre date de naissance : ")
+    print(f"Bienvenue {Prenom} {Nom} ! Vous etes né le {Date_de_naissance}.")
+
+@exercice
+def exercice2():
+    """
+    This function calculates the squares of numbers from 1 to 9 and prints them.
+
+    Parameters:
+    None
+
+    Returns:
+    None
+    """
+    Nombres = list(range(1,10))
+    carres=[]
+
+    for i in Nombres:
+        carres.append(i*i)
+    print(carres)
+
+    # plus court
+    print("\n".join([f"{i}:{s} for i,s in zip(Nombres,carres)"]))
+
+@exercice
+def exercice3():
+    nombres = list(range(0,50))
+    pairs = []
+    impairs = []
+    for i in nombres:
+        if i%2==0:
+            pairs.append(i)
+        else:
+            impairs.append(i) 
+    print(f"pairs : {pairs}")
+    print(f"impairs : {impairs}")
+
+@exercice
+def exercice5():
+    a = [2,3]
+    b = a
+    print(a)
+    print(b)
+
+    b[0] = 1
+    print(a)
+    print(b)  
+
+    a =[5,6]
+    b[0] = 10
+    print(a)
+    print(b)
+
+    # dans la premiere partie a et b sont tjrs les memes ensuite a =[1,3] et b = [1,3]
+    # ensuite a = [5,6] et b = [10,3]
+
+
+@exercice
+def exercice6():    
+    liste_de_liste = [[93, 49, 71], [36, 83, 53], [66, 32, 51]]
+    liste_applatie = []
+    for liste in liste_de_liste:
+        liste_applatie += liste
+
+    print(f"liste de liste : {liste_de_liste}")
+    print(f"liste aplatie : {liste_applatie}")  
+
+
+@exercice
+def exercice7():
 
 
 
 
-ExerxciceIA()
-exercice1()
-exercice2()
-exercice3()
-exercice4()
+
+# ExerxciceIA()
+# exercice1()
+#exercice2()
+# exercice3()
+exercice5()
+exercice6()
+exercice7()
