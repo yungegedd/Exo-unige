@@ -145,11 +145,21 @@
 
 # print(f"pi~{4*M/N}")            
 
-for n in range (100):
-    m=2
-    while m<n and n%m>0:
-        m+=1
-    if m==n:print (n)    
+# for n in range (100):
+#     m=2
+#     while m<n and n%m>0:
+#         m+=1
+#     if m==n:print (n)    
     
+
+liste = [[1,2,3],[4,5,6],[7,8,9]]
+liste2=[]
+
+for i in liste:
+    liste2 += i
+
+print(liste2)
+
+
 
 

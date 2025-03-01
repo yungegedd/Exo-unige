@@ -121,8 +121,69 @@ def exercice6():
     print(f"liste aplatie : {liste_applatie}")  
 
 
+# @exercice
+# def exercice7():
+#      while True:
+#         chaine = input("Entrer une chaine de caractères (presser 'Entrée' pour sortir) : ")
+#         if chaine == "":
+#             break
+#         pal = est_palindrome(chaine)
+#         verbe = "est" if pal else "n'est pas"
+#         print(f"'{chaine}' {verbe} un palindrome.\n")
+
+
+# def est_palindrome(chaine):
+#     # ******************** Votre code ci-dessous ********************
+    
+#     if len(chaine) <= 1:
+#         return True
+#     elif chaine[0] == chaine[-1]:
+#         return est_palindrome(chaine[1:-1])
+#     else:
+#         return False
+# return False
+    # ******************** Votre code ci-dessus *********************
 @exercice
-def exercice7():
+def exercice8():
+    # Cette fonction est déjà complétée. Vous devez compléter la fonction `demander_nombres`
+    nombres = demander_nombres()
+    print(f"Vous avez entré les nombres suivants : {nombres}")
+
+
+def demander_nombres():
+    nombres = []
+    # ******************** Votre code ci-dessous ********************
+    while True:
+        x = input()
+        if not x.isdigit():
+            break
+        nombres.append(int(x))
+    return nombres 
+
+
+@exercice
+def exercice9():
+    resultats = generer_resultats()
+
+    eleves = {}      
+    for notes in resultats:
+        for nom, note in notes.items():
+            if nom not in eleves:
+                eleves[nom] = []
+            eleves[nom].append(note)
+
+    print("\n\n>>> BILAN : \n\n")
+    max_prenom = max([len(p) for p in eleves.keys()])
+    for nom,note in sorted(eleves.items()):
+        n = len(note)
+        moyenne = sum(note)/n
+        notes_str = f"note{'s' if n>1 else ''}"
+        print(f"{nom.rjust(max_prenom)} : {n} {notes_str}-{moyenne:.2f} de moyenne" )
+
+            
+        
+
+
 
 
 
@@ -132,6 +193,8 @@ def exercice7():
 # exercice1()
 #exercice2()
 # exercice3()
-exercice5()
-exercice6()
-exercice7()
+# exercice5()
+# exercice6()
+# exercice7()
+#exercice8()
+exercice9()
