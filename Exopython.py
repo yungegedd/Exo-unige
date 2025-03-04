@@ -184,7 +184,23 @@ def exercice9():
         
 
 
+    
+    noir = (0,0,0)
+    blanc = (255,255,255)
+    rouge = (255,0,0)
+    vert = (0,255,0)
+    bleu = (0,0,255)
+    rouge_sombre = (128,0,0)
 
+[[(255,255,255) , (0,0,0), (255,0,0), (0,255,0), (0,0,255), (128,0,0)] for i in range(6)]    
+@exercice
+def exercice11():
+    image = charger_coloriage("image.txt")
+    def colorier_pixel(image,i,j,couleur):
+        if image[i][j] != blanc :
+            return
+        image[i][j] = couleur
+    afficher_coloriage(image)
 
 
 
@@ -197,4 +213,5 @@ def exercice9():
 # exercice6()
 # exercice7()
 #exercice8()
-exercice9()
+# exercice9()
+exercice11()
